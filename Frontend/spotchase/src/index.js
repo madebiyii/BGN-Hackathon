@@ -5,6 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider  } from "firebase/auth";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Login from './components/Login';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login/>,
+  },
+]);
+
 
 // Your Firebase config here
 const firebaseConfig = {
@@ -24,7 +37,7 @@ export const firebase_google_auth_provider = new GoogleAuthProvider();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
