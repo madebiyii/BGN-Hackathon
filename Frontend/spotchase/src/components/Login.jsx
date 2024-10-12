@@ -1,4 +1,4 @@
-import 'loginStyle.css';
+import './loginStyle.css';
 
 function Login() {
 
@@ -29,7 +29,7 @@ function Login() {
            name="password" required/>
 
     <button type="submit" class="button">Login</button>
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Conditions </a>.</p>
+    <p>By creating an account you agree to our <a style={{color: "dodgerblue"}}>Terms & Conditions </a>.</p>
 </form>
     </div>
     
