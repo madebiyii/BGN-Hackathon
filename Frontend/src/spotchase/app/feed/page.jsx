@@ -31,7 +31,7 @@ export default function Feed() {
 
   const tripData2 = {
     imageUrl: "/Image_of_tokyo.jpg",
-    destination: "Trip to Tokyo",
+    destination: "Tokyo",
     tripDescription: "Discover the vibrant culture of Tokyo!",
     mostLiked: "Sushi",
     leastLiked: "Crowded subways",
