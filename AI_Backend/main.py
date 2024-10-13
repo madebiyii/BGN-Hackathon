@@ -3,9 +3,22 @@ from models import User
 import google.generativeai as genai
 import os
 from models import preamble
+from fastapi.middleware.cors import CORSMiddleware
 genai.configure(api_key="AIzaSyDJ12I8qdTvBf0RDQ4DFl26gjXEZgjs7bY")
 
 app = FastAPI()
+
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 print("Application Started")
 
 @app.get("/")
