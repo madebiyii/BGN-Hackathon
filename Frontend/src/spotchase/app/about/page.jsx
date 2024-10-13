@@ -28,7 +28,7 @@ export default function About() {
 
             <img
               data-cy="about-image"
-              src="/header.webp"
+              src="/black.jpg"
               alt="Adventure and Exploration"
               width={800}
               height={800}
