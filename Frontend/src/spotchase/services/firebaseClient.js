@@ -1,17 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "spotlove-6e05c.firebaseapp.com",
-  databaseURL:
-    "https://spotlove-6e05c-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "spotlove-6e05c",
-  storageBucket: "spotlove-6e05c.appspot.com",
-  messagingSenderId: "511602126386",
-  appId: "1:511602126386:web:13fb53365341629ecb162b",
-  measurementId: "G-ZMZ8LR37XZ",
+  apiKey: "AIzaSyC4rmNVm6YE23qHvxHBY-E5uVW5Nig5ypM",
+  authDomain: "bng-spotchase.firebaseapp.com",
+  projectId: "bng-spotchase",
+  storageBucket: "bng-spotchase.appspot.com",
+  messagingSenderId: "533411030407",
+  appId: "1:533411030407:web:df749534c1cf05d4cf1f22",
+  measurementId: "G-BFRPCE2YCV"
 };
 
 const app = initializeApp(firebaseConfig);
-export const rdb = getDatabase(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+export { auth, provider, signInWithPopup };
