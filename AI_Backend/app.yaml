@@ -1,0 +1,3 @@
+runtime: python39
+# See https://cloud.google.com/appengine/docs/standard/python3/runtime#application_startup
+entrypoint: gunicorn --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind :$PORT main:app
