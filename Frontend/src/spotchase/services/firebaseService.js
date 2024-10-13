@@ -14,8 +14,6 @@ if (!admin.apps.length) {
       authProviderX509CertUrl: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
       clientX509CertUrl: process.env.FIREBASE_CLIENT_X509_CERT_URL,
     }),
-    databaseURL:
-      "https://spotlove-6e05c-default-rtdb.europe-west1.firebasedatabase.app",
   });
 }
 
