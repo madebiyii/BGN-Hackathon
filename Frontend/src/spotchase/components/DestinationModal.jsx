@@ -43,15 +43,19 @@ function DestinationModal({data, status}){
     } else {
         destination = data[number].destination
         budget =      data[number].budget
-        days    =     data[number].days
-        if (data[number].tagline){
-            tagline = data.itineraries[number].tagline;
+        
+        tagline =     data[number].tagline
+        if (data[number].days){
+          days    =     data[number].days
+        } else {
+          days    =     data[number].day
         }
-    }
+        }
+    
     
     return (
         <>
-        <h1> {destination} </h1>
+        <h1  > {destination} </h1>
         <h2> ~{budget} </h2>
         <h2> {days.length} days </h2>
         </>
