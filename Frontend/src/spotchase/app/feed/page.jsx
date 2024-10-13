@@ -16,6 +16,7 @@ import BoardingPage from "../../components/pages/BoardingPage";
 import ModalReport from "../../components/modals/ModalReport";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import DestinationCards from "../../components/DestinationCards";  // Import your DestinationCards component
 import {
   XCircleIcon,
   CheckCircleIcon,
@@ -60,9 +61,70 @@ export default function Feed() {
     const data = getSession();
   }, []);
 
+  const tripData1 = {
+    imageUrl: '/Image_of_paris.jpg',
+    destination: 'Paris',
+    tripDescription: 'Explore the beauty of Paris with this exciting itinerary!',
+    mostLiked: 'Eiffel Tower',
+    leastLiked: 'Long museum queues',
+    budget: 1200,
+    splurgeStatus: 'Yes',
+  };
+
+  const tripData2 = {
+    imageUrl: "/Image_of_tokyo.jpg",
+    destination: "Trip to Tokyo",
+    tripDescription: "Discover the vibrant culture of Tokyo!",
+    mostLiked: "Sushi",
+    leastLiked: "Crowded subways",
+    budget: "$1500",
+    splurgeStatus: "No",
+  };
+
+  const tripData3 = {
+    imageUrl: "/spain-barcelona.jpg",
+    destination: "Barcelona",
+    tripDescription: "Visit the vibrant city of Barcelona!",
+    mostLiked: "Sagrada Família",
+    leastLiked: "Crowded beaches",
+    budget: "$900",
+    splurgeStatus: "No",
+  };
+
+  const tripData4 = {
+    imageUrl: "/image_of_new_york.jpeg",
+    destination: "New York",
+    tripDescription: "Explore the energy of New York City!",
+    mostLiked: "Broadway",
+    leastLiked: "Traffic",
+    budget: "$2000",
+    splurgeStatus: "Yes",
+  };
+
+  const tripData5 = {
+    imageUrl: "/image_of_rome.webp",
+    destination: "Rome",
+    tripDescription: "Dive into history in the eternal city of Rome!",
+    mostLiked: "Colosseum",
+    leastLiked: "Tourist crowds",
+    budget: "$1100",
+    splurgeStatus: "No",
+  };
+
+  const tripData6 = {
+    imageUrl: "/image_of_dubai.jpg",
+    destination: "Dubai",
+    tripDescription: "Discover the luxury of Dubai!",
+    mostLiked: "Burj Khalifa",
+    leastLiked: "Hot weather",
+    budget: "$2500",
+    splurgeStatus: "Yes",
+  };
+
   return (
     <>
       <Navbar page="Feed" />
+
       {user != null && newMatch != null && (
         <NewMatch user={user} newMatch={newMatch} />
       )}
@@ -94,6 +156,20 @@ export default function Feed() {
         />
       )}
 
+      {/* Add DestinationCards component here */}
+      <div className="flex justify-center items-center my-10 space-x-6">        
+        <DestinationCards {...tripData1} />
+        <DestinationCards {...tripData2} />
+        </div>
+        <div className="flex justify-center items-center my-10 space-x-6">        
+        <DestinationCards {...tripData3} />
+        <DestinationCards {...tripData4} />
+        </div>
+        <div className="flex justify-center items-center my-10 space-x-6">        
+        <DestinationCards {...tripData5} />
+        <DestinationCards {...tripData6} />
+        </div>
+
       <Footer />
     </>
   );
@@ -121,180 +197,86 @@ const FeedMain = (props) => {
 
   return (
     <>
-      {users.length != 0 ? (
-        <main className="bg-fill col-1 flex h-dvh items-center justify-center overflow-y-auto fold:overflow-auto  sm:overflow-x-hidden md:h-full lg:-overflow-x-hidden">
-          <div className="-mt-10 md:mt-10">
-            <nav className="mt-8 flex items-center justify-between px-5 text-blue-500 lg:hidden">
-              <div className="mt-1 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-left text-4xl font-semibold text-transparent">
-                SpotChase
-              </div>
-              <div className="flex items-center justify-center gap-1">
-                <Link
-                  href={`profile/${user.id}`}
-                  className="inline-block cursor-pointer rounded-full bg-gradient-to-t from-blue-500 to-green-500 p-0.5 hover:scale-110"
-                >
-                  <img
-                    src={img}
-                    alt={`${name} Photo`}
-                    className="drop-shadow-xs rounded-full object-cover"
-                    style={{ width: "30px", height: "30px" }}
-                  />
-                </Link>
-
-                <Link className="relative hover:scale-110" href={`/chat`}>
-                  <div
-                    className={`absolute ${notification <= 0 && "hidden"} bottom-5 left-5 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-500 text-xs font-bold text-white shadow-md`}
-                  >
-                    {notification}
-                  </div>
-                  <img
-                    src="./chat.png"
-                    alt="Chat"
-                    className="h-8 w-8 cursor-pointer  fold:hidden sm:block"
-                  />
-                </Link>
-                <Link href={`/settings`}>
-                  <img
-                    src="./settings.png"
-                    alt="Settings"
-                    className="h-8 w-8 cursor-pointer hover:scale-110 fold:hidden sm:block"
-                  />
-                </Link>
-              </div>
-            </nav>
-
-            <nav className="mx-auto hidden items-center justify-between  text-blue-500  lg:flex lg:justify-center lg:gap-20">
-              <div className="ml-5 mt-1 bg-gradient-to-t from-blue-500 to-green-500 bg-clip-text text-left text-4xl font-semibold text-transparent lg:text-6xl">
-                SpotChase
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <Link
-                  href={`profile/${user.id}`}
-                  className="inline-block cursor-pointer rounded-full bg-gradient-to-t from-blue-500 to-green-500 p-0.5 hover:scale-110"
-                >
-                  <img
-                    src={img}
-                    alt={`${name} Photo`}
-                    className="drop-shadow-xs rounded-full object-cover"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </Link>
-                <Link href={`/chat`} className="relative hover:scale-110">
-                  <div
-                    className={`absolute ${notification <= 0 && "hidden"} bottom-6 left-6 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-500 text-xs font-bold text-white shadow-md`}
-                  >
-                    {notification}
-                  </div>
-                  <img
-                    src="./chat.png"
-                    alt="Chat"
-                    className="h-10 w-10 cursor-pointer"
-                  />
-                </Link>
-                <Link href={`/settings`}>
-                  <img
-                    src="./settings.png"
-                    alt="Settings"
-                    className="h-10 w-10 cursor-pointer hover:scale-110"
-                  />
-                </Link>
-              </div>
-            </nav>
-
-            {users && (
-              <UserProfiles users={users} user={user} setUsers={setUsers} />
-            )}
-          </div>
-        </main>
-      ) : (
-        <main className="flex h-dvh items-center justify-center">
-          <div className="-mt-10 md:mt-10">
-            <nav className="fixed left-0 right-0 top-0 mt-8  flex items-center justify-between px-5 text-blue-500 lg:hidden">
-              <div className="mt-1 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-left text-4xl font-semibold text-transparent">
-                SpotChase
-              </div>
-              <div className="flex items-center justify-center gap-1">
-                <Link
-                  href={`profile/${user.id}`}
-                  className="inline-block cursor-pointer rounded-full bg-gradient-to-t from-blue-500 to-green-500 p-0.5 hover:scale-110"
-                >
-                  <img
-                    src={img}
-                    alt={`${name} Photo`}
-                    className="drop-shadow-xs rounded-full object-cover"
-                    style={{ width: "30px", height: "30px" }}
-                  />
-                </Link>
-
-                <Link className="relative hover:scale-110" href={`/chat`}>
-                  <div
-                    className={`absolute ${notification <= 0 && "hidden"} bottom-5 left-5 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-500 text-xs font-bold text-white shadow-md`}
-                  >
-                    {notification}
-                  </div>
-                  <img
-                    src="./chat.png"
-                    alt="Chat"
-                    className="h-8 w-8 cursor-pointer  fold:hidden sm:block"
-                  />
-                </Link>
-                <Link href={`/settings`}>
-                  <img
-                    src="./settings.png"
-                    alt="Settings"
-                    className="h-8 w-8 cursor-pointer hover:scale-110 fold:hidden sm:block"
-                  />
-                </Link>
-              </div>
-            </nav>
-
-            <nav className="fixed left-0 right-0 top-0 mx-auto mt-10 hidden items-center justify-between  text-blue-500  lg:flex lg:justify-center lg:gap-20">
-              <div className="ml-5 mt-1 bg-gradient-to-t from-blue-500 to-green-500 bg-clip-text text-left text-4xl font-semibold text-transparent lg:text-6xl">
-                SpotChase
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <Link
-                  href={`profile/${user.id}`}
-                  className="inline-block cursor-pointer rounded-full bg-gradient-to-t from-blue-500 to-green-500 p-0.5 hover:scale-110"
-                >
-                  <img
-                    src={img}
-                    alt={`${name} Photo`}
-                    className="drop-shadow-xs rounded-full object-cover"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </Link>
-                <Link href={`/chat`} className="relative hover:scale-110">
-                  <div
-                    className={`absolute ${notification <= 0 && "hidden"} bottom-6 left-6 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-500 text-xs font-bold text-white shadow-md`}
-                  >
-                    {notification}
-                  </div>
-                  <img
-                    src="./chat.png"
-                    alt="Chat"
-                    className="h-10 w-10 cursor-pointer"
-                  />
-                </Link>
-                <Link href={`/settings`}>
-                  <img
-                    src="./settings.png"
-                    alt="Settings"
-                    className="h-10 w-10 cursor-pointer hover:scale-110"
-                  />
-                </Link>
-              </div>
-            </nav>
-
-            <div className="flex items-center px-5">
-              <h2 className="mt-1 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text pt-10 text-center text-4xl font-semibold text-transparent">
-                No more matches for now, check back later
-                <span className=" ml-2 text-white">👋</span>
-              </h2>
+      <main className="bg-fill col-1 flex h-dvh items-center justify-center overflow-y-auto fold:overflow-auto  sm:overflow-x-hidden md:h-full lg:-overflow-x-hidden">
+        <div className="-mt-10 md:mt-10">
+          <nav className="mt-8 flex items-center justify-between px-5 text-blue-500 lg:hidden">
+            <div className="mt-1 bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-left text-4xl font-semibold text-transparent">
+              SpotChase
             </div>
-          </div>
-        </main>
-      )}
+            <div className="flex items-center justify-center gap-1">
+              <Link
+                href={`profile/${user.id}`}
+                className="inline-block cursor-pointer rounded-full bg-gradient-to-t from-blue-500 to-green-500 p-0.5 hover:scale-110"
+              >
+                <img
+                  src={img}
+                  alt={`${name} Photo`}
+                  className="drop-shadow-xs rounded-full object-cover"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </Link>
+
+              <Link className="relative hover:scale-110" href={`/chat`}>
+                <div
+                  className={`absolute ${notification <= 0 && "hidden"} bottom-5 left-5 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-500 text-xs font-bold text-white shadow-md`}
+                >
+                  {notification}
+                </div>
+                <img
+                  src="./chat.png"
+                  alt="Chat"
+                  className="h-8 w-8 cursor-pointer  fold:hidden sm:block"
+                />
+              </Link>
+              <Link href={`/settings`}>
+                <img
+                  src="./settings.png"
+                  alt="Settings"
+                  className="h-8 w-8 cursor-pointer hover:scale-110 fold:hidden sm:block"
+                />
+              </Link>
+            </div>
+          </nav>
+
+          <nav className="mx-auto hidden items-center justify-between  text-blue-500  lg:flex lg:justify-center lg:gap-20">
+            <div className="ml-5 mt-1 bg-gradient-to-t from-blue-500 to-green-500 bg-clip-text text-left text-4xl font-semibold text-transparent lg:text-6xl">
+              SpotChase
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Link
+                href={`profile/${user.id}`}
+                className="inline-block cursor-pointer rounded-full bg-gradient-to-t from-blue-500 to-green-500 p-0.5 hover:scale-110"
+              >
+                <img
+                  src={img}
+                  alt={`${name} Photo`}
+                  className="drop-shadow-xs rounded-full object-cover"
+                  style={{ width: "40px", height: "40px" }}
+                />
+              </Link>
+              <Link href={`/chat`} className="relative hover:scale-110">
+                <div
+                  className={`absolute ${notification <= 0 && "hidden"} bottom-6 left-6 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-blue-500 text-xs font-bold text-white shadow-md`}
+                >
+                  {notification}
+                </div>
+                <img
+                  src="./chat.png"
+                  alt="Chat"
+                  className="h-10 w-10 cursor-pointer"
+                />
+              </Link>
+              <Link href={`/settings`}>
+                <img
+                  src="./settings.png"
+                  alt="Settings"
+                  className="h-10 w-10 cursor-pointer hover:scale-110"
+                />
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </main>
     </>
   );
 };
