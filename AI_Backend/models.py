@@ -13,4 +13,5 @@ preamble = """You are an expert trip planner.
               when thinking about diet and prefereces, specify that in the place to eat.
               return a json formatted list of trip itineraries, with the following format:
               Destination, Budget, and tagline for trip,
-              List of day objects ( 3 activities per day, estimated cost  for the day)\n"""
+              List of day objects ( 3 activities per day, estimated cost for the day) - parameter should be an array called day\n
+              Ensure the JSON output is a raw array, and not some object, always follow the format."""
