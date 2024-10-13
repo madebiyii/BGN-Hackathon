@@ -1,3 +1,4 @@
+
 // "use client";
 // import { motion, useInView } from "framer-motion";
 // import { useRef, useState } from "react";
@@ -6,9 +7,9 @@
 // import Navbar from "../components/navbar/Navbar";
 // import Footer from "../components/footer/Footer";
 // import {
-//   MusicalNoteIcon,
+//   MapPinIcon,
 //   UsersIcon,
-//   ChatBubbleLeftIcon,
+//   GlobeAltIcon,
 // } from "@heroicons/react/24/solid";
 
 // export default function Home() {
@@ -35,26 +36,26 @@
 //             <div className="">
 //               <h3
 //                 data-cy="content-title1"
-//                 className="bg-gradient-to-r from-peach to-peach-dark 
+//                 className="bg-gradient-to-r from-blue-500 to-blue-800 
 //               bg-clip-text text-left text-3xl font-semibold text-transparent md:px-10 md:pb-10 md:text-8xl lg:pb-5 lg:text-8xl lg:font-black"
 //               >
-//                 Your Perfect <br />
-//                 Harmony
+//                 Chase Your <br />
+//                 Adventures
 //               </h3>
 //               <p
 //                 data-cy="content-text1"
-//                 className="pt-2 font-normal text-peach md:p-10 md:pt-5 md:text-4xl"
+//                 className="pt-2 font-normal text-blue-500 md:p-10 md:pt-5 md:text-4xl"
 //               >
 //                 {" "}
-//                 Where every chord strikes a connection. <br />
-//                 Discover love through the rhythm of music 🎶{" "}
+//                 Where every path leads to new discoveries. <br />
+//                 Explore the world with SpotChase 🌍{" "}
 //               </p>
 //             </div>
 
 //             <img
 //               data-cy="content-image1"
-//               src="/phoneguy.png"
-//               alt="Stock Photo of person on phone"
+//               src="/explore.png"
+//               alt="Person Exploring"
 //               width={900}
 //               height={900}
 //               className="mb-2 mt-8 rounded-3xl shadow-lg md:mb-0"
@@ -66,13 +67,12 @@
 
 //           <div className="mb-10 items-center p-5 xl:p-10">
 //             <p className="mb-10 mt-12 text-center text-lg font-normal text-gray-400 md:mb-20 md:pt-3 md:text-3xl xl:ml-10">
-//               We used the best technology to create the best match making
-//               experience!
+//               We use top technology to bring you the ultimate exploration experience!
 //             </p>
-//             <LogoCarousel />
+//             {/* <LogoCarousel /> */}
 //           </div>
 
-//           <ConnectWithSpotify />
+//           <ConnectWithGoogle />
 //           <Footer />
 //         </main>
 //       )}
@@ -100,17 +100,17 @@
 //               data-cy="hero-title"
 //               className="mb-4 font-avenir text-3xl font-semibold text-white md:text-9xl lg:font-black"
 //             >
-//               Find Your Music Match
+//               Find Your Next Adventure
 //             </h1>
 //             <p className="text-md px-5 text-gray-100 md:text-4xl">
-//               Discover connections through the music you love
+//               Discover new places and experiences with SpotChase
 //             </p>
 
 //             <a href="/login" className="justify-center text-center">
 //               <div className="m-auto mt-10 w-2/4 cursor-pointer rounded-3xl bg-white px-10 py-2 shadow-lg hover:scale-95 md:py-5">
 //                 <span
-//                   className="whitespace-nowrap bg-gradient-to-r from-peach 
-//       to-peach-dark  bg-clip-text text-2xl font-bold text-transparent md:text-4xl"
+//                   className="whitespace-nowrap bg-gradient-to-r from-blue-500 
+//       to-blue-800 bg-clip-text text-2xl font-bold text-transparent md:text-4xl"
 //                 >
 //                   Log in
 //                 </span>
@@ -152,7 +152,7 @@
 //       <div className="mt-10 grid gap-10 px-5 md:grid-cols-2 lg:grid-cols-4">
 //         <div className="flex flex-col items-center">
 //           <h2
-//             className="bg-gradient-to-r  from-peach to-peach-dark bg-clip-text text-left 
+//             className="bg-gradient-to-r  from-blue-500 to-blue-800 bg-clip-text text-left 
 //        text-5xl font-semibold text-transparent"
 //           >
 //             {" "}
@@ -160,60 +160,56 @@
 //           </h2>
 //           <a href="/login">
 //             <h3 className="mt-5 cursor-pointer text-center text-xl font-semibold hover:underline">
-//               Connect with Your Spotify Account
+//               Log in and Set Your Destination
 //             </h3>
 //           </a>
 //           <p className="mt-2 text-center text-sm text-gray-500">
-//             Start by syncing your Spotify account and let your music taste
-//             narrate your love story.
+//             Start by choosing your destination and let SpotChase map out your journey.
 //           </p>
 //         </div>
 
 //         <div className="flex flex-col items-center">
 //           <h2
-//             className="bg-gradient-to-r from-peach to-peach-dark bg-clip-text text-left 
+//             className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-left 
 //        text-5xl font-semibold text-transparent"
 //           >
 //             {" "}
 //             Step 2
 //           </h2>
 //           <h3 className="mt-5 text-center text-xl font-semibold">
-//             Discover Matches in Your Melody
+//             Discover Unique Experiences
 //           </h3>
 //           <p className="mt-2 text-center text-sm text-gray-500">
-//             Our unique algorithm tunes into your music preferences to suggest
-//             matches that share your rhythm.
+//             Let SpotChase suggest adventures and hidden gems tailored just for you.
 //           </p>
 //         </div>
 
 //         <div className="flex flex-col items-center">
 //           <h2
-//             className="bg-gradient-to-r from-peach to-peach-dark bg-clip-text text-left 
+//             className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-left 
 //        text-5xl font-semibold text-transparent"
 //           >
 //             {" "}
 //             Step 3
 //           </h2>
 //           <h3 className="mt-5 text-center text-xl font-semibold">
-//             Find a Music Match
+//             Track Your Journey
 //           </h3>
 //           <p className="mt-2 text-center text-sm text-gray-500">
-//             Spot someone who's been jamming to the same beats as you? They'll
-//             wear a ‘music match’ badge. A harmony waiting to happen!
+//             SpotChase tracks your adventure in real-time. Keep a log of every moment.
 //           </p>
 //         </div>
 
 //         <div className="flex flex-col items-center">
 //           <h2
-//             className="bg-gradient-to-r from-peach to-peach-dark bg-clip-text text-left 
+//             className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-left 
 //        text-5xl font-semibold text-transparent"
 //           >
 //             Step 4
 //           </h2>
-//           <h3 className="mt-5 text-xl font-semibold">Create a Duet</h3>
+//           <h3 className="mt-5 text-xl font-semibold">Share Your Journey</h3>
 //           <p className="mt-2 text-center text-sm text-gray-500">
-//             When two hearts sing the same tune, we celebrate by creating a mixed
-//             playlist, setting the perfect tone for your conversation.
+//             Inspire others by sharing your experiences and routes on SpotChase.
 //           </p>
 //         </div>
 //       </div>
@@ -224,31 +220,31 @@
 // const Features = () => {
 //   const features = [
 //     {
-//       name: "Music Integration",
+//       name: "Interactive Maps",
 //       description:
-//         "Effortlessly explore and play diverse songs right within the app, creating a seamless and immersive soundtrack to your romantic adventures. ",
+//         "Use our interactive maps to plan your routes and explore new places seamlessly.",
 //       icon: (
-//         <MusicalNoteIcon className="mb-5 h-8 w-8 text-peach-dark lg:h-12 lg:w-12" />
+//         <MapPinIcon className="mb-5 h-8 w-8 text-blue-500 lg:h-12 lg:w-12" />
 //       ),
-//       link: "about/#music-integration",
+//       link: "about/#interactive-maps",
 //     },
 //     {
-//       name: "Unique Matching",
+//       name: "Personalized Adventures",
 //       description:
-//         "Experience love at first song with our unique matching system, where our advanced algorithm harmonizes your music tastes with potential matches. ",
+//         "Our algorithm customizes your adventure based on your preferences, making each journey unique.",
 //       icon: (
-//         <UsersIcon className="mb-5 h-8 w-8 text-peach-dark lg:h-12 lg:w-12" />
+//         <GlobeAltIcon className="mb-5 h-8 w-8 text-blue-500 lg:h-12 lg:w-12" />
 //       ),
-//       link: "about/#unique-matching",
+//       link: "about/#personalized-adventures",
 //     },
 //     {
-//       name: "New Interactions",
+//       name: "Community Interaction",
 //       description:
-//         "Deepen your connection in SpotLove's chat feature, where music-infused conversations pave the way to more meaningful and melodious interactions.",
+//         "Connect with fellow travelers, share tips, and collaborate on discovering new places.",
 //       icon: (
-//         <ChatBubbleLeftIcon className="mb-5 h-8 w-8 text-peach-dark lg:h-12 lg:w-12" />
+//         <UsersIcon className="mb-5 h-8 w-8 text-blue-500 lg:h-12 lg:w-12" />
 //       ),
-//       link: "about/#new-interactions",
+//       link: "about/#community-interaction",
 //     },
 //   ];
 
@@ -278,14 +274,13 @@
 //     <>
 //       <div
 //         data-cy="features"
-//         className="mt-12 rounded-t-3xl bg-gradient-to-r from-peach to-peach-dark px-5 pt-10 shadow-xl drop-shadow-lg lg:mt-28 lg:px-10 lg:pt-14 2xl:px-40"
+//         className="mt-12 rounded-t-3xl bg-gradient-to-r from-blue-500 to-blue-800 px-5 pt-10 shadow-xl drop-shadow-lg lg:mt-28 lg:px-10 lg:pt-14 2xl:px-40"
 //       >
 //         <h3 className="text-shadow-lg bg-gradient-to-r pt-5 text-left text-2xl font-bold text-white md:pb-5 md:text-7xl xl:text-8xl 2xl:text-9xl">
-//           All the Right Notes !
+//           All the Right Tools for Adventure!
 //         </h3>
 //         <p className="pt-2 font-normal text-white md:pt-3 md:text-4xl">
-//           Unique groundbreaking features designed to find the right person for
-//           you.{" "}
+//           Innovative features designed to guide and inspire your travels.
 //         </p>
 //         <motion.div
 //           variants={container}
@@ -303,7 +298,7 @@
 //               {feature.icon}
 
 //               <a href={feature.link}>
-//                 <h5 className="mb-2 text-2xl font-semibold tracking-tight text-peach-dark lg:text-4xl">
+//                 <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-500 lg:text-4xl">
 //                   {feature.name}
 //                 </h5>
 //               </a>
@@ -312,7 +307,7 @@
 //               </p>
 //               <a
 //                 href={feature.link}
-//                 className="inline-flex items-center text-peach-dark hover:underline lg:text-lg"
+//                 className="inline-flex items-center text-blue-500 hover:underline lg:text-lg"
 //               >
 //                 Learn More
 //                 <svg
@@ -339,19 +334,19 @@
 //   );
 // };
 
-// const ConnectWithSpotify = () => {
+// const ConnectWithGoogle = () => {
 //   return (
 //     <div className="w-full rounded-lg border-t p-4 py-20 text-center sm:p-8">
 //       <h5 className="mb-2 text-3xl font-bold text-gray-900 md:py-4">
-//         Start Matching Today !
+//         Start Your Journey Now!
 //       </h5>
 //       <p className="mb-5 text-base text-gray-500 sm:text-lg">
-//         Connect with your Spotify account to get started
+//         Log in with your Google account to begin exploring.
 //       </p>
 //       <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
 //         <a
 //           href="/login"
-//           className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r  from-peach to-peach-dark px-4 py-2.5 text-white hover:scale-95 sm:w-auto"
+//           className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r  from-blue-500 to-blue-800 px-4 py-2.5 text-white hover:scale-95 sm:w-auto"
 //         >
 //           <svg
 //             className="me-3 h-7 w-7"
@@ -370,71 +365,14 @@
 //             />
 //           </svg>
 //           <div className="text-left rtl:text-right">
-//             <div className="mb-1 text-xs">Connect with Spotify</div>
-//             <div className="-mt-1 font-sans text-sm font-semibold">Spotify</div>
+//             <div className="mb-1 text-xs">Connect with Google</div>
+//             <div className="-mt-1 font-sans text-sm font-semibold">Google</div>
 //           </div>
 //         </a>
 //       </div>
 //     </div>
 //   );
 // };
-
-// const LogoCarousel = () => {
-//   const logos = [
-//     { src: "/logos/next.svg", alt: "NextJs", width: 200, height: 200 },
-//     { src: "/logos/vercel.svg", alt: "Vercel", width: 200, height: 200 },
-//     { src: "/logos/cypress.png", alt: "Cypress", width: 200, height: 200 },
-//     { src: "/logos/react.svg", alt: "React", width: 100, height: 100 },
-//     { src: "/logos/tailwind.svg", alt: "Tailwind", width: 100, height: 100 },
-//     { src: "/logos/gitlab.svg", alt: "Gitlab", width: 100, height: 100 },
-//     { src: "/logos/firebase.svg", alt: "Firebase", width: 100, height: 100 },
-//   ];
-
-//   return (
-//     <div
-//       data-cy="logo-carousel"
-//       className="inline-flex w-full flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
-//     >
-//       <ul className="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8">
-//         {logos.map((logo, index) => (
-//           <li key={index}>
-//             <img
-//               src={logo.src}
-//               alt={logo.alt}
-//               width={logo.width}
-//               height={logo.height}
-//               style={{ height: "auto", width: logo.width }}
-//             />
-//           </li>
-//         ))}
-//       </ul>
-//       <ul
-//         className="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
-//         aria-hidden="true"
-//       >
-//         {logos.map((logo, index) => (
-//           <li key={index}>
-//             <img
-//               src={logo.src}
-//               alt={logo.alt}
-//               width={logo.width}
-//               height={logo.height}
-//               style={{ height: "auto", width: logo.width }}
-//             />
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// /* References
-
-// https://github.com/phithounsavanh/Tailwind-Simple-Signup-Page
-// https://victoriaoluwaferanmi.medium.com/creating-a-logo-slider-using-react-slick-e8bf94a63fc3
-// https://www.framer.com/motion/?utm_source=google&utm_medium=adwords&utm_campaign=PerformanceMax-Framer_&gad_source=1&gclid=CjwKCAjwt-OwBhBnEiwAgwzrUhVEgDnNWqdUhO2U8yWBf42qXSapPjE7FbYNkW4x-WPESrQ0VYjTJRoCKwcQAvD_BwE
-
-// */
 
 "use client";
 import { motion, useInView } from "framer-motion";
@@ -473,7 +411,7 @@ const HomePage = () => {
             <div className="">
               <h3
                 data-cy="content-title1"
-                className="bg-gradient-to-r from-blue-500 to-blue-800 
+                className="bg-gradient-to-r from-green-400 to-green-600 
               bg-clip-text text-left text-3xl font-semibold text-transparent md:px-10 md:pb-10 md:text-8xl lg:pb-5 lg:text-8xl lg:font-black"
               >
                 Chase Your <br />
@@ -481,7 +419,7 @@ const HomePage = () => {
               </h3>
               <p
                 data-cy="content-text1"
-                className="pt-2 font-normal text-blue-500 md:p-10 md:pt-5 md:text-4xl"
+                className="pt-2 font-normal text-green-400 md:p-10 md:pt-5 md:text-4xl"
               >
                 {" "}
                 Where every path leads to new discoveries. <br />
@@ -491,7 +429,7 @@ const HomePage = () => {
 
             <img
               data-cy="content-image1"
-              src="/explore.png"
+              src="/pplfun.webp"
               alt="Person Exploring"
               width={900}
               height={900}
@@ -506,7 +444,6 @@ const HomePage = () => {
             <p className="mb-10 mt-12 text-center text-lg font-normal text-gray-400 md:mb-20 md:pt-3 md:text-3xl xl:ml-10">
               We use top technology to bring you the ultimate exploration experience!
             </p>
-            {/* <LogoCarousel /> */}
           </div>
 
           <ConnectWithGoogle />
@@ -526,8 +463,8 @@ const Hero = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div
-        className="h-dvh bg-opacity-50 bg-[url('/heroimagemobile.png')] bg-cover bg-center
-    bg-no-repeat font-avenir md:bg-[url('/heroimage.png')]"
+        className="h-dvh bg-opacity-50 bg-[url('/bg.jpeg')] bg-cover bg-center
+    bg-no-repeat font-avenir md:bg-[url('/bg.jpeg')]"
       >
         <Navbar page={"Home"} />
         <div className="flex h-2/3 items-center justify-center overscroll-x-none ">
@@ -539,15 +476,15 @@ const Hero = () => {
             >
               Find Your Next Adventure
             </h1>
-            <p className="text-md px-5 text-gray-100 md:text-4xl">
+            <p className="text-md px-5 text-blue-900 md:text-4xl">
               Discover new places and experiences with SpotChase
             </p>
 
             <a href="/login" className="justify-center text-center">
               <div className="m-auto mt-10 w-2/4 cursor-pointer rounded-3xl bg-white px-10 py-2 shadow-lg hover:scale-95 md:py-5">
                 <span
-                  className="whitespace-nowrap bg-gradient-to-r from-blue-500 
-      to-blue-800 bg-clip-text text-2xl font-bold text-transparent md:text-4xl"
+                  className="whitespace-nowrap bg-gradient-to-r from-green-400 
+      to-green-600 bg-clip-text text-2xl font-bold text-transparent md:text-4xl"
                 >
                   Log in
                 </span>
@@ -566,8 +503,8 @@ const Hero = () => {
         transition={{ duration: 0.6, ease: "linear" }}
       >
         <img
-          src="/screenshot.png"
-          alt="Web Screenshot"
+          src="/cards.jpg"
+          alt="Destinations"
           width={1600}
           height={1600}
         />
@@ -589,7 +526,7 @@ const Steps = () => {
       <div className="mt-10 grid gap-10 px-5 md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col items-center">
           <h2
-            className="bg-gradient-to-r  from-blue-500 to-blue-800 bg-clip-text text-left 
+            className="bg-gradient-to-r  from-blue-400 to-green-600 bg-clip-text text-left 
        text-5xl font-semibold text-transparent"
           >
             {" "}
@@ -607,7 +544,7 @@ const Steps = () => {
 
         <div className="flex flex-col items-center">
           <h2
-            className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-left 
+            className="bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-left 
        text-5xl font-semibold text-transparent"
           >
             {" "}
@@ -623,7 +560,7 @@ const Steps = () => {
 
         <div className="flex flex-col items-center">
           <h2
-            className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-left 
+            className="bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-left 
        text-5xl font-semibold text-transparent"
           >
             {" "}
@@ -639,7 +576,7 @@ const Steps = () => {
 
         <div className="flex flex-col items-center">
           <h2
-            className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-left 
+            className="bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-left 
        text-5xl font-semibold text-transparent"
           >
             Step 4
@@ -661,7 +598,7 @@ const Features = () => {
       description:
         "Use our interactive maps to plan your routes and explore new places seamlessly.",
       icon: (
-        <MapPinIcon className="mb-5 h-8 w-8 text-blue-500 lg:h-12 lg:w-12" />
+        <MapPinIcon className="mb-5 h-8 w-8 text-blue-400 lg:h-12 lg:w-12" />
       ),
       link: "about/#interactive-maps",
     },
@@ -670,7 +607,7 @@ const Features = () => {
       description:
         "Our algorithm customizes your adventure based on your preferences, making each journey unique.",
       icon: (
-        <GlobeAltIcon className="mb-5 h-8 w-8 text-blue-500 lg:h-12 lg:w-12" />
+        <GlobeAltIcon className="mb-5 h-8 w-8 text-blue-400 lg:h-12 lg:w-12" />
       ),
       link: "about/#personalized-adventures",
     },
@@ -679,7 +616,7 @@ const Features = () => {
       description:
         "Connect with fellow travelers, share tips, and collaborate on discovering new places.",
       icon: (
-        <UsersIcon className="mb-5 h-8 w-8 text-blue-500 lg:h-12 lg:w-12" />
+        <UsersIcon className="mb-5 h-8 w-8 text-blue-400 lg:h-12 lg:w-12" />
       ),
       link: "about/#community-interaction",
     },
@@ -711,7 +648,7 @@ const Features = () => {
     <>
       <div
         data-cy="features"
-        className="mt-12 rounded-t-3xl bg-gradient-to-r from-blue-500 to-blue-800 px-5 pt-10 shadow-xl drop-shadow-lg lg:mt-28 lg:px-10 lg:pt-14 2xl:px-40"
+        className="mt-12 rounded-t-3xl bg-gradient-to-r from-blue-400 to-green-600 px-5 pt-10 shadow-xl drop-shadow-lg lg:mt-28 lg:px-10 lg:pt-14 2xl:px-40"
       >
         <h3 className="text-shadow-lg bg-gradient-to-r pt-5 text-left text-2xl font-bold text-white md:pb-5 md:text-7xl xl:text-8xl 2xl:text-9xl">
           All the Right Tools for Adventure!
@@ -735,7 +672,7 @@ const Features = () => {
               {feature.icon}
 
               <a href={feature.link}>
-                <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-500 lg:text-4xl">
+                <h5 className="mb-2 text-2xl font-semibold tracking-tight text-blue-400 lg:text-4xl">
                   {feature.name}
                 </h5>
               </a>
@@ -744,7 +681,7 @@ const Features = () => {
               </p>
               <a
                 href={feature.link}
-                className="inline-flex items-center text-blue-500 hover:underline lg:text-lg"
+                className="inline-flex items-center text-blue-400 hover:underline lg:text-lg"
               >
                 Learn More
                 <svg
@@ -783,7 +720,7 @@ const ConnectWithGoogle = () => {
       <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
         <a
           href="/login"
-          className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r  from-blue-500 to-blue-800 px-4 py-2.5 text-white hover:scale-95 sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r  from-blue-400 to-green-600 px-4 py-2.5 text-white hover:scale-95 sm:w-auto"
         >
           <svg
             className="me-3 h-7 w-7"
@@ -810,4 +747,3 @@ const ConnectWithGoogle = () => {
     </div>
   );
 };
-
