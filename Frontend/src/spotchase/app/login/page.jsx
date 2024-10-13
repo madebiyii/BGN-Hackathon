@@ -39,6 +39,7 @@ export default function Login() {
                     
                     setToken(true); // Set the token to true
                     console.log("User signed in, token set to true.");
+                    router.push("/feed"); // Navigate to the feed page
                   })
                   .catch((error) => {
                     console.error('Error during sign in:', error);
