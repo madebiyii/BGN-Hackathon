@@ -1,47 +1,11 @@
 "use client";
-import { getSession } from "next-auth/react";
 import { useContext, useState, useEffect } from "react";
-import { UserContext } from "../../store/user-context";
-import { MatchesContext } from "../../store/matches-context";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import DestinationCards from "../../components/DestinationCards"; // Import your DestinationCards component
 import DestinationModal from "../../components/DestinationModal"
 export default function Feed() {
-  const { user, handleProfileDetails } = useContext(UserContext);
-  const {
-    potentialMatches,
-    setPotentialMatches,
-    musicMatch,
-    newMatch,
-    setMusicMatch,
-    matchesFetching,
-  } = useContext(MatchesContext);
-  const [onBoarding, setOnBoarding] = useState(user?.onBoarding);
-  const [step, setStep] = useState(1);
-  const [realLocation, setRealLocation] = useState("");
-  const [firstClick, setFirstClick] = useState(false);
-
-  useEffect(() => {
-    const handleClick = () => {
-      if (!firstClick) {
-        setFirstClick(true);
-      }
-    };
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, [firstClick]);
-
-  useEffect(() => {
-    if (user != null) {
-      setOnBoarding(user.onBoarding);
-    }
-  }, [user]);
-
-  useEffect(() => {
-    const data = getSession();
-  }, []);
-
+  
   const [isModal, setModal]  = useState(false);
   const [modalData, setModalData] = useState();
   const [modalStatus, setModalStatus] = useState(0);

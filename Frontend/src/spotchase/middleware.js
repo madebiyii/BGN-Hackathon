@@ -6,7 +6,7 @@ export let token = false; // Exporting the token variable
 // Function to set the token value
 export function setToken(value) {
   token = value;
-  console.log("Just set the value now")
+  console.log("Token Value Set To " + value)
 }
 
 // This function runs as middleware for specified paths
@@ -23,14 +23,7 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  if (
-    !token &&
-    ["/feed", "/settings", "/chat", "/profile", "/genre"].some((path) =>
-      pathname.startsWith(path),
-    )
-  ) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
+ 
 
   return NextResponse.next();
 }
