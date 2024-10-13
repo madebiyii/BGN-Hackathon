@@ -3,12 +3,12 @@ import { getToken } from "next-auth/jwt";
 
 // This function runs as middleware for specified paths
 export async function middleware(request) {
-  const token = true
+  const token = 
 
-  // await getToken({
-  //   req: request,
-  //   secret: process.env.JWT_SECRET,
-  // });
+  await getToken({
+    req: request,
+    secret: process.env.JWT_SECRET,
+  });
 
   const { pathname } = request.nextUrl; // Destructuring for easier access to pathname
 

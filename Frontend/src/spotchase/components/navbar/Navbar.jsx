@@ -1,17 +1,19 @@
-// import Image from "next/image";
+
+
+// import Link from "next/link";
 
 // // Simple Navbar component, changes color based on the page
 // export default function Navbar(props) {
-//   const color = props.page == "Home" ? "white" : "pink";
+//   const color = props.page === "Home" ? "white" : "pink";
 //   const textGradient =
-//     "bg-gradient-to-r from-peach to-peach-dark bg-clip-text text-transparent";
+//     "bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent";
 
 //   return (
 //     <nav className="bg-transparent">
 //       <div className="mx-auto max-w-5xl px-6">
 //         <div className="items-center justify-center gap-7 py-10  sm:mt-0 sm:flex md:py-10">
 //           <a href="/" className="cursor-pointer">
-//             {color == "white" ? (
+//             {color === "white" ? (
 //               <img
 //                 src={"/wbspotchase.png"}
 //                 alt="SpotChase Logo"
@@ -31,43 +33,64 @@
 //           </a>
 
 //           <div className="ml-auto flex justify-center gap-2 sm:mt-8 sm:justify-end md:mt-7">
-//             <a
-//               href="/about"
-//               className="flex items-center justify-end px-2 py-4"
-//             >
+//             <a href="/about" className="flex items-center justify-end px-2 py-4">
 //               <span
-//                 className={`text-sm font-medium ${color == "white" ? "text-white" : textGradient} md:text-xl`}
+//                 className={`text-sm font-medium ${
+//                   color === "white" ? "text-white" : textGradient
+//                 } md:text-xl`}
 //               >
 //                 About
 //               </span>
 //             </a>
 
-//             <a
-//               href="mailto:jeffrey.igala2@mail.dcu.ie?cc=joseph.adedayo2@mail.dcu.ie&subject=SpotLove%20Enquiry"
-//               className="flex items-center justify-end px-2 py-4"
-//             >
+//             <a href="/contact" className="flex items-center justify-end px-2 py-4">
 //               <span
-//                 className={`text-sm font-medium ${color == "white" ? "text-white" : textGradient} md:text-xl`}
+//                 className={`text-sm font-medium ${
+//                   color === "white" ? "text-white" : textGradient
+//                 } md:text-xl`}
 //               >
 //                 Contact
 //               </span>
 //             </a>
 
-//             <a
-//               data-cy="login-button"
-//               href="/login"
-//               className="flex items-center justify-end"
-//             >
+//             {/* Conditional rendering: Only show Set Preferences on Feed, not Preferences */}
+//             {props.page !== "Preferences" ? (
+//               <Link href="/preferences">
+//                 <div
+//                   className={`cursor-pointer rounded-xl ${
+//                     color === "white"
+//                       ? "bg-white"
+//                       : "bg-gradient-to-r from-blue-500 to-green-500"
+//                   } px-3 py-1 hover:scale-95 md:px-7`}
+//                 >
+//                   <span
+//                     className={`whitespace-nowrap ${
+//                       color === "white" ? textGradient : "text-white"
+//                     } text-sm font-bold  md:text-xl`}
+//                   >
+//                     Set Preferences
+//                   </span>
+//                 </div>
+//               </Link>
+//             ) : null}
+
+//             <Link href="/share-itinerary">
 //               <div
-//                 className={`cursor-pointer rounded-xl ${color == "white" ? "bg-white" : "bg-gradient-to-r from-peach to-peach-dark"} px-3 py-1 hover:scale-95 md:px-7`}
+//                 className={`cursor-pointer rounded-xl ${
+//                   color === "white"
+//                     ? "bg-white"
+//                     : "bg-gradient-to-r from-blue-500 to-green-500"
+//                 } px-3 py-1 hover:scale-95 md:px-7`}
 //               >
 //                 <span
-//                   className={`whitespace-nowrap ${color == "white" ? textGradient : "text-white"} text-sm font-bold  md:text-xl`}
+//                   className={`whitespace-nowrap ${
+//                     color === "white" ? textGradient : "text-white"
+//                   } text-sm font-bold  md:text-xl`}
 //                 >
-//                   Log in
+//                   Share an Itinerary here
 //                 </span>
 //               </div>
-//             </a>
+//             </Link>
 //           </div>
 //         </div>
 //       </div>
@@ -76,11 +99,11 @@
 // }
 
 
-import Image from "next/image";
+import Link from "next/link";
 
-// Updated Navbar component with blue-green color theme for SpotChase
+// Simple Navbar component, changes color based on the page
 export default function Navbar(props) {
-  const color = props.page === "Home" ? "white" : "blue";
+  const color = props.page === "Home" ? "white" : "pink";
   const textGradient =
     "bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent";
 
@@ -109,10 +132,7 @@ export default function Navbar(props) {
           </a>
 
           <div className="ml-auto flex justify-center gap-2 sm:mt-8 sm:justify-end md:mt-7">
-            <a
-              href="/about"
-              className="flex items-center justify-end px-2 py-4"
-            >
+            <a href="/about" className="flex items-center justify-end px-2 py-4">
               <span
                 className={`text-sm font-medium ${
                   color === "white" ? "text-white" : textGradient
@@ -122,10 +142,7 @@ export default function Navbar(props) {
               </span>
             </a>
 
-            <a
-              href="mailto:info@spotchase.com"
-              className="flex items-center justify-end px-2 py-4"
-            >
+            <a href="/contact" className="flex items-center justify-end px-2 py-4">
               <span
                 className={`text-sm font-medium ${
                   color === "white" ? "text-white" : textGradient
@@ -135,31 +152,71 @@ export default function Navbar(props) {
               </span>
             </a>
 
-            <a
-              data-cy="login-button"
-              href="/login"
-              className="flex items-center justify-end"
-            >
-              <div
-                className={`cursor-pointer rounded-xl ${
-                  color === "white"
-                    ? "bg-white"
-                    : "bg-gradient-to-r from-blue-500 to-green-500"
-                } px-3 py-1 hover:scale-95 md:px-7`}
-              >
-                <span
-                  className={`whitespace-nowrap ${
-                    color === "white" ? textGradient : "text-white"
-                  } text-sm font-bold  md:text-xl`}
+            {/* Conditional rendering: Only show Log in on the Home page */}
+            {props.page === "Home" ? (
+              <Link href="/login">
+                <div
+                  className={`cursor-pointer rounded-xl ${
+                    color === "white"
+                      ? "bg-white"
+                      : "bg-gradient-to-r from-blue-500 to-green-500"
+                  } px-3 py-1 hover:scale-95 md:px-7`}
                 >
-                  Log in
-                </span>
-              </div>
-            </a>
+                  <span
+                    className={`whitespace-nowrap ${
+                      color === "white" ? textGradient : "text-white"
+                    } text-sm font-bold  md:text-xl`}
+                  >
+                    Log in
+                  </span>
+                </div>
+              </Link>
+            ) : (
+              <>
+                {/* Show Set Preferences on other pages */}
+                {props.page !== "Preferences" && (
+                  <Link href="/preferences">
+                    <div
+                      className={`cursor-pointer rounded-xl ${
+                        color === "white"
+                          ? "bg-white"
+                          : "bg-gradient-to-r from-blue-500 to-green-500"
+                      } px-3 py-1 hover:scale-95 md:px-7`}
+                    >
+                      <span
+                        className={`whitespace-nowrap ${
+                          color === "white" ? textGradient : "text-white"
+                        } text-sm font-bold  md:text-xl`}
+                      >
+                        Set Preferences
+                      </span>
+                    </div>
+                  </Link>
+                )}
+
+                {/* Show Share an Itinerary button on other pages */}
+                <Link href="/share-itinerary">
+                  <div
+                    className={`cursor-pointer rounded-xl ${
+                      color === "white"
+                        ? "bg-white"
+                        : "bg-gradient-to-r from-blue-500 to-green-500"
+                    } px-3 py-1 hover:scale-95 md:px-7`}
+                  >
+                    <span
+                      className={`whitespace-nowrap ${
+                        color === "white" ? textGradient : "text-white"
+                      } text-sm font-bold  md:text-xl`}
+                    >
+                      Share an Itinerary here
+                    </span>
+                  </div>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
     </nav>
   );
 }
-
