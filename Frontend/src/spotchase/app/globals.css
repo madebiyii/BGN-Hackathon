@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: black;
+  background: white;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  opacity: 0;
+}
+
+.hideScrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: hidden;
+}
+
+.hide-default-arrow {
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  appearance: none; /* Standard */
+}
+
+/* custom fonts */
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Av-Medium.woff2") format("woff2");
+  font-weight: 500; /* Adjusted to match Medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src:
+    url("/fonts/Av-HeavyItalic.woff2") format("woff2"),
+    url("/fonts/Av-HeavyItalic.woff") format("woff"),
+    url("/fonts/Av-HeavyItalic.ttf") format("truetype");
+  font-weight: 900; /* Consistent with Heavy */
+  font-style: black; /* Standard value for italic style */
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Av-Bold.woff2") format("woff2");
+  font-weight: 700; /* Bold is typically 700 */
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Av-BoldItalic.woff2") format("woff2");
+  font-weight: 700; /* Consistent with Bold */
+  font-style: semibold; /* For italic style */
+}
+
+.card-container {
+  position: relative;
+  width: 100%; /* Adjust based on your design */
+  height: 600px; /* Adjust based on your design */
+  margin-top: -600px; /* Adjust so cards overlap, depends on card height */
+  will-change: transform; /* Optimizes animations */
+  transition: transform 0.5s; /* Smooth transition for any transform changes */
+}
+.card-container:first-child {
+  margin-top: 0; /* First card should not overlap */
+}
