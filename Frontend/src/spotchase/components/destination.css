@@ -1,0 +1,47 @@
+.title{
+    font-size: x-large;
+    color: gray;
+    text-align: center;
+}
+
+div > body {
+    text-align: center;
+}
+
+.tagline {
+    text-align: center;
+    font-size: larger;
+    font-style: italic;
+}
+
+.extra {
+    text-align: center;
+}
+
+.day {
+    text-align: center;
+    font-size: larger;
+    text-decoration: underline;
+}
+
+.act{
+    margin: 9px;
+    padding-bottom: 4px;
+}
+
+.cost{
+    text-align: center;
+    font-style: italic;
+}
+
+.star {
+    color: brown;
+    font-size: 48px;
+    transition: all 1.5s;
+}
+
+.star:hover{
+    font-size: 60px;
+    color: gold;
+    text-decoration: underline;
+}
