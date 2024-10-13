@@ -16,8 +16,9 @@ const DestinationCards = ({ imageUrl, destination, tripDescription, mostLiked, l
          })
           .then((response) => response.json())
           .then((data) => {
+              var newData = ConvertKeysToLowerCase(data);
               let firstChoice = data[0];
-              choiceHandler(data, false);
+              choiceHandler(newData, false);
             });
     };
 
@@ -55,3 +56,24 @@ const DestinationCards = ({ imageUrl, destination, tripDescription, mostLiked, l
 };
 
 export default DestinationCards;
+
+
+function ConvertKeysToLowerCase(obj) {
+    if (Object.prototype.toString.apply(obj) !== '[object Array]' && Object.prototype.toString.apply(obj) !== '[object Object]') {
+        return obj;
+    }
+    let output = {};
+    for (let i in obj) {
+        if (Object.prototype.toString.apply(obj[i]) === '[object Object]') {
+           output[i.toLowerCase()] = ConvertKeysToLowerCase(obj[i]);
+        } else if(Object.prototype.toString.apply(obj[i]) === '[object Array]'){
+            output[i.toLowerCase()]=[];
+            for (let j = 0; j < obj[i].length; j++) {
+                output[i.toLowerCase()].push(ConvertKeysToLowerCase(obj[i][j]));
+            }
+        } else {
+            output[i.toLowerCase()] = obj[i];
+        }
+    }
+    return output;
+};

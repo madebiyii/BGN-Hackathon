@@ -124,7 +124,13 @@ export default function Feed() {
 
   return (
     <>
-      { isModal && <DestinationModal data={modalData} status={modalStatus}></DestinationModal>}
+      { isModal && <DestinationModal data={modalData} status={modalStatus} 
+      close={(rating)=>{
+        setModalStatus(0);
+        setModal(false);
+        console.log("Itinerary Has Been Rated")
+      }}>
+        </DestinationModal>}
       <Navbar page="Feed" />
 
       
