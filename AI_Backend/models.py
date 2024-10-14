@@ -7,6 +7,10 @@ class User(BaseModel):
     start_date: str
     end_date: str
     diet: List[str]
+    preferences: List[str]
+    misc_data: str
+    id: int
+    
 
 preamble = """You are an expert trip planner.
               I will give you a json-formatted list of a user's preferences (budget, dates, desired activities etc),
