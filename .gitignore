@@ -1,3 +1,4 @@
 BNG-Hackathon/
 .venv/
+.env/
 node_modules/
